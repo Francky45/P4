@@ -3,6 +3,22 @@
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/UserManager.php');
+
+function formRegister()
+{
+    require('view/frontend/registerView.php');
+}
+
+function formLog()
+{
+    require('view/frontend/logView.php');
+}
+
+function logOut()
+{
+    require('view/frontend/logoutView.php');
+}
 
 function listPosts()
 {
@@ -56,7 +72,47 @@ function editComment($id, $comment)
         throw new Exception('Impossible de modifier le commentaire !');
     }
     else {
-        echo 'commentaire : ' . $_POST['comment'];
-        header('Location: index.php?action=viewComment&id=' . $id);
+        header ('Location: index.php?action=post&id='.$_GET['idpost']);
     }
 }
+
+function newUser()
+{
+
+    $userManager = new \OpenClassrooms\Blog\Model\UserManager(); // Création d'un objet
+    $verifyUser = $userManager->verifyUser();
+    
+    if ($verifyUser->rowCount() == 0)
+    {
+        $newUser = $userManager->addUser(); // Appel d'une fonction de cet objet
+        header ('Location: index.php?action=login');
+    } 
+    else 
+    {
+        throw new Exception ('Pseudo déjà utilisé !');
+    }
+
+}
+
+function logUser()
+{
+    $userManager = new \OpenClassrooms\Blog\Model\UserManager(); // Création d'un objet
+    // $verifyPseudoPass = $userManager->verifyPseudoPass();
+    $resultat = $userManager->sessionStart();
+    // $isPasswordCorrect = password_verify($_POST['pass'], $resultat['pass']);
+
+    if (password_verify($_POST['pass'], $resultat['pass']))
+    {
+        session_start();
+        $_SESSION['id'] = $resultat['id'];
+        $_SESSION['pseudo'] = $resultat['pseudo'];
+        header ('Location: index.php');
+    }
+    else 
+    {
+        throw new Exception ('Pseudo ou mot de passe incorrect !');
+    }
+
+}
+
+
