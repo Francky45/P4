@@ -106,6 +106,7 @@ function logUser()
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $resultat['pseudo'];
+        $_SESSION['admin'] = $resultat['admin'];
         header ('Location: index.php');
     }
     else 

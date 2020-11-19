@@ -16,18 +16,28 @@
         </li>
         <?php
     if (isset( $_SESSION['pseudo'])){
-        echo 'Vous êtes connecté en tant que : ' . $_SESSION['pseudo'];
+        
+        echo '<li>Vous êtes connecté en tant que : ' . $_SESSION['pseudo'] . '</li>';
+        ?>
+        <li>
+            <a href="index.php?action=logout">Déconnection <i class="far fa-hand-pointer"></i></a>
+        </li>
 
-       echo '<li>
-        <a href="index.php?action=logout">Déconnection <i class="far fa-hand-pointer"></i></a>
-    </li>';}
+        <?php 
+        if ($_SESSION['admin'] == 1){
+           echo '<li><a href="index.php?action=admin">Administration <i class="far fa-hand-pointer"></i></a></li>';
+        }
+
+    }
     else{
-        echo ' <li>
-        <a href="index.php?action=register">Inscription <i class="far fa-hand-pointer"></i></a>
-    </li>
-    <li>
-        <a href="index.php?action=login">Connection <i class="far fa-hand-pointer"></i></a>
-    </li>';
+        ?>
+        <li>
+            <a href="index.php?action=register">Inscription <i class="far fa-hand-pointer"></i></a>
+        </li>
+        <li>
+            <a href="index.php?action=login">Connection <i class="far fa-hand-pointer"></i></a>
+        </li>
+        <?php 
         }
     ?>
 
