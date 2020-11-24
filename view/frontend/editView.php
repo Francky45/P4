@@ -8,7 +8,7 @@ session_start();?>
       
     <form action="index.php?action=editComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['idpost'] ?>" method="post">
         <div>
-            <label for="author">Auteur : <?= $comment['author'] ?></label>
+            <label for="author">Auteur : <?= $comment['id_user'] ?></label>
         </div><br>
         <div>
             <label for="comment">Commentaire: </label><br>

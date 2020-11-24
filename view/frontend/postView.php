@@ -1,6 +1,5 @@
 <?php $title = htmlspecialchars($post['title']); ?>
-<?php
-session_start();?>
+
 <?php ob_start(); ?>
 
 <div class="news">
@@ -18,11 +17,19 @@ session_start();?>
     <h2>Commentaires</h2>
 
     <form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
-        <div>
-            <label for="author">Auteur</label><br />
-            <input type="text" id="author" name="author" <?php  if (isset( $_SESSION['pseudo'])){
-               echo 'value="'. $_SESSION['pseudo'] . '"' ;} ?>/>
-        </div>
+
+
+        <?php if (isset( $_SESSION['pseudo']))
+        {
+            echo '
+<div>
+<label for="author">Auteur : ' . $_SESSION['pseudo'] . '</label>
+</div><br />';}else{echo '
+    <label for="author">Auteur</label><br />
+     <input type="text" id="author" name="author" />';
+    }
+?>
+
         <div>
             <label for="comment">Commentaire</label><br />
             <textarea id="comment" name="comment"></textarea>
@@ -37,9 +44,10 @@ while ($comment = $comments->fetch())
 {
 ?>
 
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+    <p><strong><?= htmlspecialchars($comment['id_user']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?> (<a
-            href="index.php?action=viewComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Modifier le commentaire</a>)</p>
+            href="index.php?action=viewComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Modifier le
+            commentaire</a>)</p>
 
     <?php
 } //Fin du while ...

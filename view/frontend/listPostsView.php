@@ -1,8 +1,5 @@
 <?php $title = 'Mon blog'; ?>
 
-<?php
-session_start();?>
-
 <?php ob_start(); ?>
 <h1>Derniers billets du blog :</h1>
 

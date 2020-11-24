@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('controller/frontend.php');
 
 try {
@@ -15,8 +16,8 @@ try {
         }
         elseif($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                if (!empty($_POST['comment'])) {
+                    addComment($_GET['id'], $_POST['comment']);
                 } else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
                 }
@@ -68,15 +69,31 @@ try {
         elseif($_GET['action'] == 'logForm') {
             logUser();
         }
-        else if ($_GET['action'] == 'logout') {
+        elseif($_GET['action'] == 'logout') {
             logOut();
+        }
+        elseif($_GET['action'] == 'admin') {
+            if (isset($_SESSION['admin'])) {
+
+            adminPanel();
+        }else{
+            throw new Exception('Vous n\'êtes pas autorisé !');
+        }
+    }
+
+        elseif($_GET['action'] == 'newPost') {
+            if (isset($_POST['titlePost'], $_POST['contentPost'])) {
+                addNewPost();
+            } else {
+                throw new Exception('Tout les champs ne sont pas remplis !');
+            }
         }
 
 
-    } else {
-        listPosts();
+        } else {
+            listPosts();
+        }
+    } catch (Exception $e) { // S'il y a eu une erreur, alors...
+        $errorMessage = $e -> getMessage();
+        require('view/frontend/errorView.php');
     }
-} catch (Exception $e) { // S'il y a eu une erreur, alors...
-    $errorMessage = $e -> getMessage();
-    require('view/frontend/errorView.php');
-}

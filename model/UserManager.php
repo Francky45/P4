@@ -11,7 +11,6 @@ class UserManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
         $req->execute(array($_POST['pseudo']));
-        // $resultat = $req->fetch();
 
         return $req;
     }
@@ -36,14 +35,4 @@ class UserManager extends Manager
         return $resultat;
     }
 
-    public function verifyAdmin()
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT admin FROM users WHERE admin=1');
-        $req->execute(array('admin'));
-        $admin = $req->fetch();
-        
-        return $admin;
-
-    }
 }

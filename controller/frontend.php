@@ -20,6 +20,11 @@ function logOut()
     require('view/frontend/logoutView.php');
 }
 
+function adminPanel()
+{
+    require('view/frontend/adminView.php');
+}
+
 function listPosts()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager(); // Création d'un objet
@@ -39,11 +44,11 @@ function post()
     require('view/frontend/postView.php');
 }
 
-function addComment($postId, $author, $comment)
+function addComment($postId, $comment)
 {
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $commentManager->postComment($postId, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -51,6 +56,15 @@ function addComment($postId, $author, $comment)
     else {
         header('Location: index.php?action=post&id=' . $postId);
     }
+}
+
+function addNewPost()
+{
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+
+    $newPost = $postManager->addPost();
+    header ('Location: index.php');
+
 }
 
 function viewComment()
@@ -97,13 +111,10 @@ function newUser()
 function logUser()
 {
     $userManager = new \OpenClassrooms\Blog\Model\UserManager(); // Création d'un objet
-    // $verifyPseudoPass = $userManager->verifyPseudoPass();
     $resultat = $userManager->sessionStart();
-    // $isPasswordCorrect = password_verify($_POST['pass'], $resultat['pass']);
 
     if (password_verify($_POST['pass'], $resultat['pass']))
     {
-        session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $resultat['pseudo'];
         $_SESSION['admin'] = $resultat['admin'];
