@@ -52,7 +52,8 @@ function signalComment()
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
     $signalComment = $commentManager->signalComment($_GET['id']);
 
-    header('Location: index.php');
+    header ('Location: index.php?action=post&id=' . $_GET['idpost']);
+
 }
 
 function listPosts()
@@ -93,7 +94,7 @@ function addNewPost()
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
 
     $newPost = $postManager->addPost();
-    header ('Location: index.php');
+    header ('Location: index.php?action=admin');
 
 }
 

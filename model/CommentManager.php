@@ -72,7 +72,7 @@ class CommentManager extends Manager
     public function signalComment($id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET comment_report = 1, comment_date = NOW() WHERE id = ?');
+        $req = $db->prepare('UPDATE comments SET comment_report = 1 WHERE id = ?');
         $signalComment = $req->execute(array($id));
    
         return $signalComment;
