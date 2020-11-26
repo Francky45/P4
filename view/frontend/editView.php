@@ -1,6 +1,5 @@
 <?php $title = 'Modifier un commentaire' ?>
-<?php
-session_start();?>
+
 <?php ob_start(); ?>
   
 <div id="form_edit_commment">

@@ -14,6 +14,14 @@ class CommentManager extends Manager
   
         return $comments;
     }
+
+    public function getCommentsSignals()
+    {
+        $db = $this->dbConnect();
+        $signals = $db->query('SELECT * FROM comments WHERE comment_report = 1');
+  
+        return $signals;
+    }
   
     public function postComment($postId, $comment)
     {
@@ -41,5 +49,23 @@ class CommentManager extends Manager
         $newComment = $req->execute(array($comment, $id));
    
         return $newComment;
+    }
+    
+    public function acceptComment($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET comment_report = 0, comment_date = NOW() WHERE id = ?');
+        $acceptedComment = $req->execute(array($id));
+   
+        return $acceptedComment;
+    }
+
+    public function deleteComment($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM comments WHERE id = ?');
+        $deletedComment = $req->execute(array($id));
+   
+        return $deletedComment;
     }
 }

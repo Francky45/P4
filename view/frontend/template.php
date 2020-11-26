@@ -11,26 +11,30 @@
 <header>
     <div id="title">Projet 4: Blog pour écrivain</div>
     <ul id="login">
-        <li>
-            <a href="index.php">Accueil <i class="fas fa-home"></i></a>
-        </li>
-        <?php
+    <?php
     if (isset( $_SESSION['pseudo'])){
         
         echo '<li>Vous êtes connecté en tant que : ' . $_SESSION['pseudo'] . '</li>';
         ?>
         <li>
+            <a href="index.php">Accueil <i class="fas fa-home"></i></a>
+        </li>
+
+        <li>
             <a href="index.php?action=logout">Déconnection <i class="far fa-hand-pointer"></i></a>
         </li>
 
         <?php 
-        if ($_SESSION['admin'] == 1){
+        if (isset($_SESSION['admin'])){
            echo '<li><a href="index.php?action=admin">Administration <i class="far fa-hand-pointer"></i></a></li>';
         }
 
     }
     else{
         ?>
+                <li>
+            <a href="index.php">Accueil <i class="fas fa-home"></i></a>
+        </li>
         <li>
             <a href="index.php?action=register">Inscription <i class="far fa-hand-pointer"></i></a>
         </li>

@@ -82,13 +82,26 @@ try {
     }
 
         elseif($_GET['action'] == 'newPost') {
-            if (isset($_POST['titlePost'], $_POST['contentPost'])) {
+            if (isset($_POST['titlePost'], $_POST['contentPost'], $_SESSION['admin'])) {
                 addNewPost();
             } else {
                 throw new Exception('Tout les champs ne sont pas remplis !');
             }
         }
 
+        elseif($_GET['action'] == 'acceptComment') {
+            if (isset($_SESSION['admin'])) {
+
+            acceptComment($_GET['id']);
+             }
+         }
+
+         elseif($_GET['action'] == 'deleteComment') {
+            if (isset($_SESSION['admin'])) {
+
+            deleteComment($_GET['id']);
+             }
+         }
 
         } else {
             listPosts();

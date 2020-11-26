@@ -22,7 +22,26 @@ function logOut()
 
 function adminPanel()
 {
+    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $signals = $commentManager->getCommentsSignals();
+
     require('view/frontend/adminView.php');
+}
+
+function acceptComment()
+{
+    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $acceptComment = $commentManager->acceptComment($_GET['id']);
+
+    header('Location: index.php?action=admin');
+}
+
+function deleteComment()
+{
+    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $deleteComment = $commentManager->deleteComment($_GET['id']);
+
+    header('Location: index.php?action=admin');
 }
 
 function listPosts()
@@ -117,7 +136,12 @@ function logUser()
     {
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $resultat['pseudo'];
-        $_SESSION['admin'] = $resultat['admin'];
+        
+        if ($resultat['admin'] == 1){
+            $_SESSION['admin'] = $resultat['admin'];
+        }elseif ($resultat['admin'] == 0) {
+            $_SESSION['user'] = $resultat['admin'];
+        }
         header ('Location: index.php');
     }
     else 

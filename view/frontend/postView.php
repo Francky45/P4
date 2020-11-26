@@ -47,6 +47,9 @@ while ($comment = $comments->fetch())
     <p><strong><?= htmlspecialchars($comment['id_user']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?> (<a
             href="index.php?action=viewComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Modifier le
+            commentaire</a>)
+            (<a
+            href="index.php?action=signalComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Signaler le
             commentaire</a>)</p>
 
     <?php
