@@ -24,6 +24,9 @@ function adminPanel()
 {
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
     $signals = $commentManager->getCommentsSignals();
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
+    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+
 
     require('view/frontend/adminView.php');
 }
@@ -42,6 +45,14 @@ function deleteComment()
     $deleteComment = $commentManager->deleteComment($_GET['id']);
 
     header('Location: index.php?action=admin');
+}
+
+function signalComment()
+{
+    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $signalComment = $commentManager->signalComment($_GET['id']);
+
+    header('Location: index.php');
 }
 
 function listPosts()
@@ -83,6 +94,15 @@ function addNewPost()
 
     $newPost = $postManager->addPost();
     header ('Location: index.php');
+
+}
+
+function deletePost()
+{
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+
+    $deletePost = $postManager->deletePost($_GET['id']);
+    header ('Location: index.php?action=admin');
 
 }
 

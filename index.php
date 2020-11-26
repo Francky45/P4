@@ -93,15 +93,33 @@ try {
             if (isset($_SESSION['admin'])) {
 
             acceptComment($_GET['id']);
-             }
+             }else{
+                throw new Exception('Vous n\'êtes pas autorisé !');
+            }
          }
 
          elseif($_GET['action'] == 'deleteComment') {
             if (isset($_SESSION['admin'])) {
 
             deleteComment($_GET['id']);
-             }
+             }else{
+                throw new Exception('Vous n\'êtes pas autorisé !');
+            }
          }
+
+         elseif($_GET['action'] == 'signalComment') {
+            signalComment($_GET['id']);
+             }
+
+             elseif($_GET['action'] == 'deletePost') {
+                if (isset($_SESSION['admin'])) {
+    
+                deletePost($_GET['id']);
+                 }else{
+                    throw new Exception('Vous n\'êtes pas autorisé !');
+                }
+             }
+         
 
         } else {
             listPosts();

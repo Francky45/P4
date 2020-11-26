@@ -68,4 +68,13 @@ class CommentManager extends Manager
    
         return $deletedComment;
     }
+
+    public function signalComment($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET comment_report = 1, comment_date = NOW() WHERE id = ?');
+        $signalComment = $req->execute(array($id));
+   
+        return $signalComment;
+    }
 }
