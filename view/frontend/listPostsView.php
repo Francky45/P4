@@ -3,7 +3,7 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Derniers billets du blog :</h1>
+<h1><span>Derniers billets du blog :</span></h1>
 
 
 <?php
@@ -12,14 +12,14 @@ while ($data = $posts->fetch())
 ?>
 <div class="news">
     <h3>
-        <?= htmlspecialchars($data['title']) ?>
+        <?= $data['title'] ?>
         <em>le <?= $data['creation_date_fr'] ?></em>
     </h3>
 
     <p>
-        <?= nl2br(htmlspecialchars($data['content'])) ?>
+        <?= $data['content'] ?>
         <br />
-        <em><a href="index.php?action=post&id=<?= $data['id'] ?>">Commentaires</a></em>
+        <button id="linkpost" ><em><a href="index.php?action=post&id=<?= $data['id'] ?>">Voir l'article et ses commentaires</a></em></button>
     </p>
 </div>
 

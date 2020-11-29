@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = $post['title']; ?>
 
 <?php ob_start(); ?>
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($post['title']) ?>
+        <?= $post['title'] ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
 
     <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?>
+        <?= $post['content'] ?>
     </p>
 </div>
 
 <div id="form_and_comments">
-    <h2>Commentaires</h2>
+    <h1><span>Commentaires</span></h1>
 
-    <form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
+    <form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post" class="formlog">
 
 
         <?php if (isset( $_SESSION['pseudo']))
@@ -46,8 +46,8 @@ while ($comment = $comments->fetch())
 {
 ?>
 
-    <p><strong><?= htmlspecialchars($comment['id_user']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?> (<a
+    <p><strong><?= $comment['id_user'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+    <p><?= $comment['comment'] ?> (<a
             href="index.php?action=viewComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Modifier le
             commentaire</a>)
             (<a

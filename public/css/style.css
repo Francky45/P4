@@ -1,51 +1,87 @@
 body, html{
-    min-width: 100%;
+    font-family: 'Roboto', cursive;
+    background: rgb(233, 231, 231);
     margin: 0;
 }
 
 header {
+    margin-bottom: 30px;
+    font-family: 'Nerko One', cursive;
     text-align: center;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    background-image: url(../pictures/alaska.jpg);
+    height: 400px;
+
 }
 
-#title {
-    font-size: 2em;
+header > #title {
+    font-size: 3em;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    width: 50%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    bottom: -50%;
 }
 
 
-#login {
+header > #login {
+    position: fixed;
+    box-shadow: 15px 2px #3232321a, 0 15px 15px #0000001a;
+    background: #000000cc;
+    color: white;
     padding-left: 0;
     font-size: 1.2em;
     display: inline-flex;
     list-style: none;
-    width: 66%;
-    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    justify-content: space-around;
+    margin-top: 0;
+    align-items: center;
 }
+
+header > #login a {
+    text-decoration: none;
+    color:white;
+}
+
+header > #login a:hover {
+    color:grey;
+}
+
 
 h1,
 h3 {
     text-align: center;
 }
 
-h3 {
-    padding: 10px;
-    background-color: #055ea5;
-    color: white;
-    font-size: 0.9em;
-    margin-bottom: 0px;
+h1 {
+    font-family: 'Nerko One', cursive;
+    font-size: 20pt;
+    color: #20bcd5;
+    text-align: center;
 }
+
+h1 span {
+    border: 4px dashed #20bcd5;
+    padding: 10px;
+}
+
+h3 {
+    background: #000000cc;
+    font-size: 15pt;
+    color: #20bcd5;
+    text-align: center;
+    padding: 30px 0 30px 0;
+    margin: 0 0 10px 0;
+}
+
 
 #titre {
     text-align: center;
     font-size: 1.5em;
-}
-
-.news p {
-    padding: 15px;
-    background-color: #CCCCCC;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 #retour_liste {
@@ -56,12 +92,20 @@ h3 {
 }
 
 .news {
-    width: 70%;
+    width: 90%;
     margin: auto;
+    margin-top: 30px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+
 }
 
+.news p{
+    line-height: 1.5;
+    padding: 10px;
+}
+
+
 #com {
-    background: #CCC;
     text-align: center;
     padding: 15px;
     font-size: 1.1em;
@@ -78,14 +122,53 @@ a {
 
 #form_edit_commment{
     text-align: center;
+} 
+
+#newpost, #editpost, #signalcomment, #form_and_comments{
+    padding: 1%;
+    text-align: center;
+}
+
+.formlog{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.pdeco{
+    line-height: 1.5;
+    font-size: 1.5em;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#linkpost{
+    margin: 10px;
+    background: #000000cc;
+    right: -50%;
+    position: relative;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 20px;
+    border-style: dashed;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+}
+
+#linkpost a{
+    font-family: 'Nerko One', 'Cursive';
+    color: #20bcd5;
+}
+
+#linkpost:hover{
+    background: #535353cc;
 }
 
 footer {
-    margin-top: 30px;
     background: #000000cc;
+    margin-top: 30px;
     color: white;
     padding: 2rem;
     font-weight: bold;
     text-align: end;
     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
 }
+

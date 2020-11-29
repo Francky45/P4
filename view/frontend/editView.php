@@ -22,7 +22,7 @@
 
     <?php 
 
-    echo 'Commentaire Enregistré dans la Base de données : ' . htmlspecialchars($comment['comment']);
+    echo 'Commentaire Enregistré dans la Base de données : ' . $comment['comment'];
 
 ?>
 

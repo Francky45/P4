@@ -3,10 +3,10 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Connection</h1>
+<h1><span>Connection</span></h1>
 
 
-<form method="post" action="index.php?action=logForm" class="">
+<form method="post" action="index.php?action=logForm" class="formlog">
     <p>
         <label for="pseudo"> Votre Pseudo : </label>
         <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" required />

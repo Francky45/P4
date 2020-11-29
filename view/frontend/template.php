@@ -7,6 +7,9 @@
     <title><?= $title ?></title>
     <link href="public/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <script src="https://cdn.tiny.cloud/1/p7vc9jkczvsbc0irp11602786gg36fb1t737pot7j9m4g6zs/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
       tinymce.init({
@@ -21,7 +24,6 @@
 </head>
 
 <header>
-    <div id="title">Projet 4: Blog pour écrivain</div>
     <ul id="login">
     <?php
     if (isset( $_SESSION['pseudo'])){
@@ -56,9 +58,9 @@
         <?php 
         }
     ?>
-
-
     </ul>
+    <div id="title">Billet simple pour l'Alaska</div>
+
 </header>
 
 <body>

@@ -3,10 +3,10 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Inscription</h1>
+<h1><span>Inscription</span></h1>
 
 
-<form method="post" action="index.php?action=addUser" class="">
+<form method="post" action="index.php?action=addUser" class="formlog">
         <p>
             <label for="pseudo"> Votre Pseudo : </label>
             <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" required />
