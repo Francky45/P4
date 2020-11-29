@@ -111,7 +111,7 @@ try {
             signalComment($_GET['id']);
              }
 
-             elseif($_GET['action'] == 'deletePost') {
+         elseif($_GET['action'] == 'deletePost') {
                 if (isset($_SESSION['admin'])) {
     
                 deletePost($_GET['id']);
@@ -120,6 +120,23 @@ try {
                 }
              }
          
+             elseif($_GET['action'] == 'editPostPanel') {
+                if (isset($_SESSION['admin'])) {
+    
+                editPostPanel($_GET['id']);
+                 }else{
+                    throw new Exception('Vous n\'êtes pas autorisé !');
+                }
+             }
+             elseif($_GET['action'] == 'editPost') {
+                if (isset($_SESSION['admin'])) {
+    
+                editPost($_GET['id']);
+                 }else{
+                    throw new Exception('Vous n\'êtes pas autorisé !');
+                }
+             }
+
 
         } else {
             listPosts();

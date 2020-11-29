@@ -29,7 +29,7 @@ while ($data = $posts->fetch())
     <p>
         <?= htmlspecialchars($data['title']) ?>
         <em>le <?= $data['creation_date_fr'] ?></em>
-        <em><a href="index.php?action=editPost&id=<?= $data['id'] ?>">Modifier l'article</a>
+        <em><a href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a>
         <a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></em>
 
 <!-- 

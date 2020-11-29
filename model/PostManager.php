@@ -41,4 +41,13 @@ class PostManager extends Manager
    
         return $deletedPost;
     }
+
+    public function editPost($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE posts SET title = ?, content = ? ,  creation_date = NOW() WHERE id = ?');
+        $editPost = $req->execute(array($_POST['title'], $_POST['content'], $postId));
+   
+        return $editPost;
+    }
 }

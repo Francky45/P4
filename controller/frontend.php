@@ -20,6 +20,14 @@ function logOut()
     require('view/frontend/logoutView.php');
 }
 
+function editPostPanel()
+{
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
+    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+
+    require('view/frontend/editPostView.php');
+}
+
 function adminPanel()
 {
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
@@ -62,6 +70,15 @@ function listPosts()
     $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
 
     require('view/frontend/listPostsView.php');
+}
+
+function editPost() 
+{
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+    $editPost = $postManager->editPost($_GET['id']);
+
+    header('Location: index.php?action=admin');
+
 }
 
 function post()
