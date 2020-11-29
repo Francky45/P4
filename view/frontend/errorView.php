@@ -3,12 +3,13 @@
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Erreur !</h1>
-<p>Il y a une erreur !</p>
+<h1><span>Erreur !</span></h1>
 
-Voici l'erreur: <em><?= $errorMessage ?></em><br>
+<p class="pdeco">Il y a une erreur !</p>
 
-<br><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a>
+<p class="pdeco">Voici l'erreur: <em><?= $errorMessage ?></em><br>
+
+<br><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></p>
 
 <?php $content = ob_get_clean(); ?>
 
