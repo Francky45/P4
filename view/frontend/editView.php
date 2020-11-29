@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php $title = 'Modifier un commentaire' ?>
 
 <?php ob_start(); ?>

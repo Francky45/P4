@@ -1,5 +1,6 @@
-<?php 
+<!DOCTYPE html>
 
+<?php 
 $_SESSION = array();
 session_destroy();
 

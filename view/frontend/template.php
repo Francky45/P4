@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -6,6 +7,17 @@
     <title><?= $title ?></title>
     <link href="public/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <script src="https://cdn.tiny.cloud/1/p7vc9jkczvsbc0irp11602786gg36fb1t737pot7j9m4g6zs/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      });
+    </script>
 </head>
 
 <header>
@@ -50,7 +62,7 @@
 </header>
 
 <body>
-    <?= $content ?>
+    <?= $content ?> 
 </body>
 
 <footer>
