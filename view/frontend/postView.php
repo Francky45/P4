@@ -26,20 +26,18 @@
             echo '
 <div>
 <label for="author">Auteur : ' . $_SESSION['pseudo'] . '</label>
-</div><br />';}else{echo '
-    <label for="author">Auteur</label><br />
-     <input type="text" id="author" name="author" />';
+</div><br />
+<div>
+<label for="comment">Commentaire :</label><br />
+<textarea id="comment" name="comment"></textarea>
+</div>
+<div>
+<input type="submit" />
+</div>
+</form>';}else{echo '
+</form>';
     }
 ?>
-
-        <div>
-            <label for="comment">Commentaire</label><br />
-            <textarea id="comment" name="comment"></textarea>
-        </div>
-        <div>
-            <input type="submit" />
-        </div>
-    </form>
 
     <?php
 while ($comment = $comments->fetch())
@@ -47,12 +45,21 @@ while ($comment = $comments->fetch())
 ?>
 
     <p><strong><?= $comment['id_user'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= $comment['comment'] ?> (<a
-            href="index.php?action=viewComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Modifier le
-            commentaire</a>)
-            (<a
-            href="index.php?action=signalComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Signaler le
-            commentaire</a>)</p>
+    <p><?= $comment['comment'] ?></p>
+    
+            <?php   if (isset($_SESSION['admin'])) {
+echo' <p><button class="button_admin"><a
+href="index.php?action=viewComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Modifier le commentaire</a></button></p>';
+echo' <p><button class="button_admin"><a
+href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Supprimer le commentaire</a></button></p>';} ?>
+
+<?php   if (isset($_SESSION['user'])) {
+echo' <p><button class="button_admin"><a
+href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler le commentaire</a></button></p>';} ?>
+<!-- 
+<p><button class="button_admin">
+            <a href="index.php?action=signalComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Signaler le
+            commentaire</a></button></p> -->
 
     <?php
 } //Fin du while ...

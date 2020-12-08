@@ -27,6 +27,7 @@ header > #title {
 
 header > #login {
     position: fixed;
+    z-index: 10;
     box-shadow: 15px 2px #3232321a, 0 15px 15px #0000001a;
     background: #000000cc;
     color: white;
@@ -100,7 +101,7 @@ h3 {
 }
 
 .news p{
-    line-height: 1.5;
+    line-height: 2em;
     padding: 10px;
 }
 
@@ -154,12 +155,17 @@ a {
 }
 
 #linkpost a{
+    font-size: 1.5em;
     font-family: 'Nerko One', 'Cursive';
     color: #20bcd5;
 }
 
 #linkpost:hover{
     background: #535353cc;
+}
+
+#comment_admin{
+    padding: 5%;
 }
 
 footer {

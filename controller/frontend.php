@@ -170,17 +170,23 @@ function logUser()
     $userManager = new \OpenClassrooms\Blog\Model\UserManager(); // Création d'un objet
     $resultat = $userManager->sessionStart();
 
+
     if (isset($resultat['pass'])){
         if (password_verify($_POST['pass'], $resultat['pass'])){
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $resultat['pseudo'];
+        header ('Location: index.php');
+        }  else 
+        {
+            throw new Exception ('Pseudo ou mot de passe incorrect !');
         }
+    
         if ($resultat['admin'] == 1){
             $_SESSION['admin'] = $resultat['admin'];
         }elseif ($resultat['admin'] == 0) {
             $_SESSION['user'] = $resultat['admin'];
-        }
-        header ('Location: index.php');
+        }      
+
     }
     else 
     {
