@@ -121,7 +121,7 @@ a {
     text-align: center;
 }
 
-#form_edit_commment{
+#form_edit_commment, #form_edit_post{
     text-align: center;
 } 
 
@@ -136,10 +136,16 @@ a {
 }
 
 .pdeco{
-    line-height: 1.5;
+    line-height: 2.2;
     font-size: 1.5em;
     margin-top: 30px;
     text-align: center;
+}
+
+.button_home{
+    right: -50%;
+    position: relative;
+    transform: translateX(-50%);
 }
 
 #linkpost{

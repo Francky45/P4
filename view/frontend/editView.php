@@ -9,7 +9,7 @@
       
     <form action="index.php?action=editComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['idpost'] ?>" method="post">
         <div>
-            <label for="author">Auteur : <?= $comment['id_user'] ?></label>
+            <label for="author">Auteur : <?= $comment['pseudo'] ?></label>
         </div><br>
         <div>
             <label for="comment">Commentaire: </label><br>
@@ -26,7 +26,7 @@
 
 ?>
 
-    <p><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></p>
+    <button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
      
 </div> 
   

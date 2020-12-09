@@ -44,7 +44,7 @@ while ($comment = $comments->fetch())
 {
 ?>
 
-    <p><strong><?= $comment['id_user'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+    <p><strong><?= $comment['pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= $comment['comment'] ?></p>
     
             <?php   if (isset($_SESSION['admin'])) {
@@ -56,18 +56,14 @@ href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET
 <?php   if (isset($_SESSION['user'])) {
 echo' <p><button class="button_admin"><a
 href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler le commentaire</a></button></p>';} ?>
-<!-- 
-<p><button class="button_admin">
-            <a href="index.php?action=signalComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['id'] ?>">Signaler le
-            commentaire</a></button></p> -->
 
     <?php
 } //Fin du while ...
 ?>
-
-    <p><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></p>
-
 </div>
+
+<button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
+
 
 <?php $content = ob_get_clean(); ?>
 

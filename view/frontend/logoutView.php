@@ -13,7 +13,7 @@ $title = 'Mon blog'; ?>
 
 <p class="pdeco">Vous êtes déconnecté ! 
 
-<br><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></p>
+<br><button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button></p>
 
 <?php $content = ob_get_clean(); ?>
 

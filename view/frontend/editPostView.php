@@ -18,15 +18,15 @@ $data = $posts->fetch()
 
         </div><br>
         <div>
-            <label for="content">Contenu : </label><br>
-            <textarea id="content" name="content">Contenu de l'article</textarea>
+            <label for="content">Contenu de l'article : </label><br>
+            <textarea id="content" name="content"></textarea>
         </div><br>
         <div>
             <input type="submit" value="Modifier" />
         </div>
     </form>
 
-    <p><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></p>
+    <button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
      
 </div> 
   
