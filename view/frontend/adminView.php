@@ -15,8 +15,8 @@
             <input type="text" name="titlePost" id="titlePost" placeholder="Titre de l'article" required />
         </p>
         <p>
-            <label for="contentPost"> Contenu de l'article : </label>
-            <textarea id="contentPost" name="contentPost" required> </textarea>
+            <label for="contentPost"> Contenu de l'article : </label><br>
+            <br><textarea id="contentPost" name="contentPost" required> </textarea>
         </p>
         <p> <input type="submit" value="Valider" /> </p>
     </form><br>

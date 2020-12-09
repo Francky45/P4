@@ -29,10 +29,10 @@
 </div><br />
 <div>
 <label for="comment">Commentaire :</label><br />
-<textarea id="comment" name="comment"></textarea>
+<br><textarea id="comment" name="comment"></textarea>
 </div>
 <div>
-<input type="submit" />
+<br><input type="submit" />
 </div>
 </form>';}else{echo '
 </form>';
@@ -43,7 +43,7 @@
 while ($comment = $comments->fetch())
 {
 ?>
-
+<br><div id="comment_post">
     <p><strong><?= $comment['pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= $comment['comment'] ?></p>
     
@@ -56,7 +56,7 @@ href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET
 <?php   if (isset($_SESSION['user'])) {
 echo' <p><button class="button_admin"><a
 href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler le commentaire</a></button></p>';} ?>
-
+</div>
     <?php
 } //Fin du while ...
 ?>

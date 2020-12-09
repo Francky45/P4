@@ -148,6 +148,16 @@ a {
     transform: translateX(-50%);
 }
 
+#comment_post{
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    width: 90%;
+    position: relative;
+    right: -50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    margin: 10px;
+}
+
 #linkpost{
     margin: 10px;
     background: #000000cc;

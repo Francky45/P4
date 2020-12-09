@@ -12,23 +12,23 @@
             <label for="author">Auteur : <?= $comment['pseudo'] ?></label>
         </div><br>
         <div>
-            <label for="comment">Commentaire: </label><br>
-            <textarea id="comment" name="comment"><?= $comment['comment'] ?></textarea>
+            <label for="comment">Commentaire : </label><br>
+            <br><textarea id="comment" name="comment"><?= $comment['comment'] ?></textarea>
         </div><br>
         <div>
             <input type="submit" value="Modifier" />
         </div>
-    </form>
+    </form><br>
 
     <?php 
 
     echo 'Commentaire Enregistré dans la Base de données : ' . $comment['comment'];
 
 ?>
-
-    <button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
      
 </div> 
+
+<button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
   
 <?php $content = ob_get_clean(); ?>
   
