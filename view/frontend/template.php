@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
 
 <head>
@@ -19,6 +17,9 @@
     </script>
 </head>
 
+
+
+<body>
 <header>
     <ul id="login">
     <?php
@@ -58,13 +59,12 @@
     <div id="title">Billet simple pour l'Alaska</div>
 
 </header>
-
-<body>
     <?= $content ?> 
-</body>
-
-<footer>
+    <footer>
     Francky Vaugon - Étudiant OpenClassrooms - Développeur Web Junior - Projet 4
 </footer>
+</body>
+
+
 
 </html>

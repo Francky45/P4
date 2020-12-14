@@ -7,9 +7,9 @@
 
 <div id="newpost">
 
-<h2>Rédiger un Nouvel Article :</h2>
+    <h2>Rédiger un Nouvel Article :</h2>
 
-<form method="post" action="index.php?action=newPost" class="newPostForm">
+    <form method="post" action="index.php?action=newPost" class="newPostForm">
         <p>
             <label for="titlePost"> Titre de l'article : </label>
             <input type="text" name="titlePost" id="titlePost" placeholder="Titre de l'article" required />
@@ -21,29 +21,29 @@
         <p> <input type="submit" value="Valider" /> </p>
     </form><br>
 
-    </div>
+</div>
 
-    <div id="editpost">
+<div id="editpost">
 
-<h2>Modification d'un article :</h2>
+    <h2>Modification d'un article :</h2>
 
 
     <?php
 while ($data = $posts->fetch())
 {
 ?>
-<div class="news">
-    <p>
-        Titre de l'article : <?= htmlspecialchars($data['title']) ?><br />
-        <em>le <?= $data['creation_date_fr'] ?></em><br />
-        <button class="button_admin">
-        <em><a href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a></button>
-        <button class="button_admin">
-        <a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></em></button>
+    <div class="news">
+        <p>
+            Titre de l'article : <?= htmlspecialchars($data['title']) ?><br />
+            <em>le <?= $data['creation_date_fr'] ?></em><br />
+            <button class="button_admin">
+                <a href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a></button>
+            <button class="button_admin">
+                <a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></button>
         </p>
-</div>
+    </div>
 
-<?php
+    <?php
 }
 $posts->closeCursor();
 ?>
@@ -51,21 +51,23 @@ $posts->closeCursor();
 
 <div id="signalcomment">
 
-<h2>Signalement Commentaires :</h2>
-<div id="comment_admin">
-<?php
+    <h2>Signalement Commentaires :</h2>
+    <div id="comment_admin">
+        <?php
 while ($comments = $signals->fetch())
 {
-echo 'Numéro ID d\'article : ' . $comments['post_id'] . '<br />Numéro ID du commentaire : ' . $comments['id'] . '<br />Commentaire : ' . $comments['comment']?> 
-<button class="button_admin"><a href="index.php?action=acceptComment&id=<?= $comments['id']?>">Approuver le commentaire</a></button>
-<button class="button_admin"><a href="index.php?action=deleteComment&id=<?= $comments['id']?>"> Supprimer le commentaire</a><br /></button><br /></div>
+echo '<br>Voici le contenu du commentaire signalé : ' . $comments['comment']?>
+        <button class="button_admin"><a href="index.php?action=acceptComment&id=<?= $comments['id']?>">Approuver le
+                commentaire</a></button>
+        <button class="button_admin"><a href="index.php?action=deleteComment&id=<?= $comments['id']?>"> Supprimer le
+                commentaire</a><br /></button><br />
 
 <?php } //Fin du while ...
 $signals->closeCursor();
+?>
 
-?> 
 </div>
-
+</div>
 
 
 <?php $content = ob_get_clean(); ?>

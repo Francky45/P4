@@ -15,12 +15,11 @@ while ($data = $posts->fetch())
         <?= $data['title'] ?>
         <em>le <?= $data['creation_date_fr'] ?></em>
     </h3>
-
-    <p>
+<div class="post_list">
         <?= $data['content'] ?>
         <br />
         <button id="linkpost" ><em><a href="index.php?action=post&id=<?= $data['id'] ?>">Voir l'article et ses commentaires</a></em></button>
-    </p>
+        </div>
 </div>
 
 <?php
