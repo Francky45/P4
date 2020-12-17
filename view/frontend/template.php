@@ -29,7 +29,7 @@
     <script src="https://cdn.tiny.cloud/1/p7vc9jkczvsbc0irp11602786gg36fb1t737pot7j9m4g6zs/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
       tinymce.init({
-        selector: 'textarea',
+        selector: '#contentPost , #content',
         language : "fr_FR",
       });
     </script>
