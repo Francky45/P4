@@ -46,22 +46,19 @@ while ($comment = $comments->fetch())
                 <?= $comment['comment'] ?>
 
                 <?php   if (isset($_SESSION['admin'])) {
-echo' <p><button class="button_admin"><a
-href="index.php?action=viewComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Modifier le commentaire</a></button></p>';
-echo' <button class="button_admin"><a
-href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Supprimer le commentaire</a></button>';} ?>
+echo' <p><a class="linkbutton"
+href="index.php?action=viewComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Modifier</a></p>';
+echo' <p><a class="linkbutton"
+href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Supprimer</a></p>';} ?>
 
                 <?php   if (isset($_SESSION['user'])) {
-echo' <p><button class="button_admin"><a
-href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler le commentaire</a></button></p>';} ?>
+echo' <p><a class="linkbutton"
+href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler</a></p>';} ?>
             </div>
             <?php
 } //Fin du while ...
 ?>
     </div>
-
-    <button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
-
 
     <?php $content = ob_get_clean(); ?>
 

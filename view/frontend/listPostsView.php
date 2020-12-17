@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Billet Simple pour l\'Alaska !'; ?>
+<?php $title = 'Un Billet Simple vers l\'Alaska !'; ?>
 
 <?php ob_start(); ?>
 <h1><span>Derniers billets du blog :</span></h1>
@@ -17,8 +17,9 @@ while ($data = $posts->fetch())
     </h3>
 <div class="post_list">
         <?= $data['content'] ?>
-        <br />
-        <button id="linkpost" ><em><a href="index.php?action=post&id=<?= $data['id'] ?>">Voir l'article et ses commentaires</a></em></button>
+        <br /><div class="linkpost">
+        <a class="linkbutton" href="index.php?action=post&id=<?= $data['id'] ?>"><em>Voir les commentaires</em></a>
+        </div>
         </div>
 </div>
 

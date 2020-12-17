@@ -9,8 +9,6 @@
 
 <p class="pdeco">Voici l'erreur: <em><?= $errorMessage ?></em><br></p>
 
-<br><button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button>
-
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

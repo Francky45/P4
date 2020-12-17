@@ -32,15 +32,11 @@
 while ($data = $posts->fetch())
 {
 ?>
-    <div class="news">
-        <p>
-            Titre de l'article : <?= htmlspecialchars($data['title']) ?><br />
-            <em>le <?= $data['creation_date_fr'] ?></em><br />
-            <button class="button_admin">
-                <a href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a></button>
-            <button class="button_admin">
-                <a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></button>
-        </p>
+    <div class="news_admin">
+        <p> Titre de l'article : <?= htmlspecialchars($data['title']) ?><br /></p>
+        <p><em>le <?= $data['creation_date_fr'] ?></em><br /></p>
+        <p> <a class="linkbutton" href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a></p>
+        <p> <a class="linkbutton" href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></p>
     </div>
 
     <?php
@@ -56,17 +52,16 @@ $posts->closeCursor();
         <?php
 while ($comments = $signals->fetch())
 {
-echo '<br>Voici le contenu du commentaire signalé : ' . $comments['comment']?>
-        <button class="button_admin"><a href="index.php?action=acceptComment&id=<?= $comments['id']?>">Approuver le
-                commentaire</a></button>
-        <button class="button_admin"><a href="index.php?action=deleteComment&id=<?= $comments['id']?>"> Supprimer le
-                commentaire</a><br /></button><br />
+echo '<br>Contenu du commentaire signalé : ' . $comments['comment']?>
+        <p><a class="linkbutton" href="index.php?action=acceptComment&id=<?= $comments['id']?>">Approuver</a>
+            <p><a class="linkbutton" href="index.php?action=deleteComment&id=<?= $comments['id']?>">Supprimer</a><br />
+            </p>
 
-<?php } //Fin du while ...
+            <?php } //Fin du while ...
 $signals->closeCursor();
 ?>
 
-</div>
+    </div>
 </div>
 
 

@@ -26,8 +26,6 @@
     <p> <input type="submit" value="Valider" /> </p>
 </form><br>
 
-<p><button class="button_home"><a href="index.php">Retour à l'accueil <i class="fas fa-home"></i></a></button></p>
-
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
