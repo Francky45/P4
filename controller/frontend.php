@@ -24,6 +24,8 @@ function editPostPanel()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
     $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $post = $postManager->getPost($_GET['id']);
+
 
     require('view/frontend/editPostView.php');
 }

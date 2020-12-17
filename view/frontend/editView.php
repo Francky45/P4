@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Modifier un'; ?>
+<?php $title = 'Modifier un commentaire'; ?>
 
 <?php ob_start(); ?>
 <h1><span>Modifier un commentaire</span></h1>

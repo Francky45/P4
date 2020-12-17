@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Modifier un article' ?>
+<?php $title = 'Un Billet Simple vers l\'Alaska !' ?>
 
 <?php ob_start();?>
 
@@ -10,12 +10,12 @@
 <div id="form_edit_post">
 
       
-    <form action="index.php?action=editPost&id=<?= $_GET['id'] ?>" method="post">
+    <form action="index.php?action=editPost&id=<?= $post['id'] ?>" method="post">
 
-        <label for="title">Titre de l'article : </label>
-        <input type="text" name="title" id="title" placeholder="Titre" required /><br>
-        <br><label for="content">Contenu de l'article : </label><br>
-        <br><textarea id="content" name="content"></textarea><br>
+        <label for="title">Nouveau Titre de l'article :</label>
+        <input type="text" name="title" id="title" placeholder=" <?= $post['title'] ?>" required /><br>
+        <br><label for="content">Nouveau Contenu de l'article : </label><br>
+        <br><textarea id="content" name="content"><?= $post['content'] ?></textarea><br>
         <input type="submit" value="Modifier" />
     </form>  
 </div> 
