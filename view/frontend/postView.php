@@ -27,7 +27,7 @@
 <label for="author">Auteur : ' . $_SESSION['pseudo'] . '</label>
 <br />
 
-<label for="comment">Commentaire :</label><br />
+<br><label for="comment">Commentaire :</label><br />
 <br><textarea id="comment" name="comment"></textarea>
 <br><input type="submit" />
 

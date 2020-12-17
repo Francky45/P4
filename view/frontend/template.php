@@ -2,6 +2,24 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Un Billet Simple vers l'Alaska !" />
+    <meta property="og:title" content="Un Billet Simple vers l'Alaska !" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="Un Billet Simple vers l'Alaska ! Un blog par Jean Forteroche"
+    />
+    <meta property="og:image" content="public/pictures/alaska.jpg" />
+    <meta
+      property="og:description"
+      content="Un Billet Simple vers l'Alaska ! Un blog par Jean Forteroche"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="public/pictures/icon.png"
+    />
     <title><?= $title ?></title>
     <link href="public/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />

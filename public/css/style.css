@@ -210,12 +210,22 @@ footer {
     }
 
     header > #title{
+        font-size: 2.2em;
         width: 100%;
     }
 
     header > #login{
         height: auto;
         flex-direction: column;
+    }
+
+    header > #login > li {
+        padding: 5px;
+    }
+
+    #linkpost{
+        margin: 0;
+        padding: 5px;
     }
 
   }

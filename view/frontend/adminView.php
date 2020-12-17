@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Panneau d\'Administration' ?>
 
 <?php ob_start(); ?>
 <h1><span>Panneau d'Administration</span></h1>

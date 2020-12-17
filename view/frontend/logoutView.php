@@ -4,7 +4,7 @@
 $_SESSION = array();
 session_destroy();
 
-$title = 'Mon blog'; ?>
+$title = 'Déconnection'; ?>
 
 <?php ob_start(); ?>
 

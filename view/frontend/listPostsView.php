@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Un Billet Simple vers l\'Alaska !'; ?>
 
 <?php ob_start(); ?>
 <h1><span>Derniers billets du blog :</span></h1>

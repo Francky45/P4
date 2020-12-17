@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Connection'; ?>
 
 <?php ob_start(); ?>
 <h1><span>Connection</span></h1>

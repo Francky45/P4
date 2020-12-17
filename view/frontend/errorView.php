@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'ERREUR'; ?>
 
 <?php ob_start(); ?>
 <h1><span>Erreur !</span></h1>
