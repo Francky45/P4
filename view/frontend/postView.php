@@ -41,7 +41,7 @@ while ($comment = $comments->fetch())
 {
 ?>
             <br>
-            <div id="comment_post">
+            <div class="comment_post">
                 <p><strong><?= $comment['pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
                 <?= $comment['comment'] ?>
 

@@ -9,7 +9,7 @@
       
     <form action="index.php?action=editComment&id=<?= $comment['id'] ?>&idpost=<?= $_GET['idpost'] ?>" method="post">
 
-        <label for="author">Auteur : <?= $comment['pseudo'] ?></label><br>
+        <p>Auteur : <?= $comment['pseudo'] ?></p><br>
         <br><label for="comment">Commentaire : </label><br>
         <br><textarea id="comment" name="comment"><?= $comment['comment'] ?></textarea><br>
         <input type="submit" value="Modifier" />
