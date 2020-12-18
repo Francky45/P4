@@ -35,8 +35,8 @@ while ($data = $posts->fetch())
     <div class="news_admin">
         <p> Titre de l'article : <?= htmlspecialchars($data['title']) ?><br /></p>
         <p><em>le <?= $data['creation_date_fr'] ?></em><br /></p>
-        <p> <a class="linkbutton" href="index.php?action=editPostPanel&id=<?= $data['id'] ?>">Modifier l'article</a></p>
-        <p> <a class="linkbutton" href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer l'article</a></p>
+        <p> <a class="linkbutton" href="index.php?action=editPostPanel&id=<?= htmlspecialchars($data['id']) ?>">Modifier l'article</a></p>
+        <p> <a class="linkbutton" href="index.php?action=deletePost&id=<?= htmlspecialchars($data['id']) ?>">Supprimer l'article</a></p>
     </div>
 
     <?php
@@ -52,9 +52,9 @@ $posts->closeCursor();
         <?php
 while ($comments = $signals->fetch())
 {
-echo '<br>Contenu du commentaire signalé : ' . $comments['comment']?>
-        <p><a class="linkbutton" href="index.php?action=acceptComment&id=<?= $comments['id']?>">Approuver</a>
-            <p><a class="linkbutton" href="index.php?action=deleteComment&id=<?= $comments['id']?>">Supprimer</a><br />
+echo '<br>Contenu du commentaire signalé : ' . htmlspecialchars($comments['comment'])?>
+        <p><a class="linkbutton" href="index.php?action=acceptComment&id=<?= htmlspecialchars($comments['id'])?>">Approuver</a>
+            <p><a class="linkbutton" href="index.php?action=deleteComment&id=<?= htmlspecialchars($comments['id'])?>">Supprimer</a><br />
             </p>
 
             <?php } //Fin du while ...

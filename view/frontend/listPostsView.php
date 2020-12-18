@@ -18,7 +18,7 @@ while ($data = $posts->fetch())
 <div class="post_list">
         <?= $data['content'] ?>
         <br /><div class="linkpost">
-        <a class="linkbutton" href="index.php?action=post&id=<?= $data['id'] ?>"><em>Voir les commentaires</em></a>
+        <a class="linkbutton" href="index.php?action=post&id=<?= htmlspecialchars($data['id']) ?>"><em>Voir les commentaires</em></a>
         </div>
         </div>
 </div>

@@ -43,13 +43,13 @@ while ($comment = $comments->fetch())
 
                 <?php   if (isset($_SESSION['admin'])) {
 echo' <p><a class="linkbutton"
-href="index.php?action=viewComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Modifier</a></p>';
+href="index.php?action=viewComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Modifier</a></p>';
 echo' <p><a class="linkbutton"
-href="index.php?action=deleteComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Supprimer</a></p>';} ?>
+href="index.php?action=deleteComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Supprimer</a></p>';} ?>
 
                 <?php   if (isset($_SESSION['user'])) {
 echo' <p><a class="linkbutton"
-href="index.php?action=signalComment&id=' .  $comment['id'] . '&idpost=' . $_GET['id'] . '">Signaler</a></p>';} ?>
+href="index.php?action=signalComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' .htmlspecialchars($_GET['id']) . '">Signaler</a></p>';} ?>
             </div>
             <?php
 } //Fin du while ...

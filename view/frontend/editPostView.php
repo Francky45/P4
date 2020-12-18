@@ -10,7 +10,7 @@
 <div id="form_edit_post">
 
       
-    <form action="index.php?action=editPost&id=<?= $post['id'] ?>" method="post">
+    <form action="index.php?action=editPost&id=<?= htmlspecialchars($post['id'])?>" method="post">
 
         <label for="title">Nouveau Titre de l'article :</label>
         <input type="text" name="title" id="title" placeholder=" <?= $post['title'] ?>" required /><br>
