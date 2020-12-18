@@ -22,11 +22,7 @@
 
             <?php if (isset( $_SESSION['pseudo']))
         {
-            echo '
-
-<label for="author">Auteur : ' . $_SESSION['pseudo'] . '</label>
-<br />
-
+            echo 'Auteur : ' . $_SESSION['pseudo'] . '<br />
 <br><label for="comment">Commentaire :</label><br />
 <br><textarea id="comment" name="comment"></textarea>
 <br><input type="submit" />
@@ -43,7 +39,7 @@ while ($comment = $comments->fetch())
             <br>
             <div class="comment_post">
                 <p><strong><?= $comment['pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-                <?= $comment['comment'] ?>
+                <p><?= $comment['comment'] ?></p>
 
                 <?php   if (isset($_SESSION['admin'])) {
 echo' <p><a class="linkbutton"
