@@ -17,7 +17,7 @@
     <div id="form_and_comments">
         <h1><span>Commentaires</span></h1>
 
-        <form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post" class="formlog">
+        <form action="index.php?action=addComment&id=<?= htmlspecialchars($post['id'])?>" method="post" class="formlog">
 
 
             <?php if (isset( $_SESSION['pseudo']))
