@@ -38,8 +38,9 @@ while ($comment = $comments->fetch())
 ?>
             <br>
             <div class="comment_post">
-                <p><strong><?= $comment['pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-                <p><?= $comment['comment'] ?></p>
+                <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le
+                    <?= htmlspecialchars($comment['comment_date_fr']) ?></p>
+                <p><?= htmlspecialchars($comment['comment']) ?></p>
 
                 <?php   if (isset($_SESSION['admin'])) {
 echo' <p><a class="linkbutton"

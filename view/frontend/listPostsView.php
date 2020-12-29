@@ -12,8 +12,8 @@ while ($data = $posts->fetch())
 ?>
 <div class="news">
     <h3>
-        <?= $data['title'] ?>
-        <em>le <?= $data['creation_date_fr'] ?></em>
+        <?= htmlspecialchars($data['title']) ?>
+        <em>le <?= htmlspecialchars($data['creation_date_fr']) ?></em>
     </h3>
 <div class="post_list">
         <?= $data['content'] ?>
