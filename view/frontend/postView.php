@@ -22,7 +22,7 @@
 
             <?php if (isset( $_SESSION['pseudo']))
         {
-            echo 'Auteur : ' . $_SESSION['pseudo'] . '<br />
+            echo 'Auteur : ' . htmlspecialchars($_SESSION['pseudo']) . '<br />
 <br><label for="comment">Commentaire :</label><br />
 <br><textarea id="comment" name="comment"></textarea>
 <br><input type="submit" />

@@ -34,7 +34,7 @@
       <?php
     if (isset( $_SESSION['pseudo'])){
         
-        echo '<li>Bonjour ' . $_SESSION['pseudo'] . ' !</li>';
+        echo '<li>Bonjour ' . htmlspecialchars($_SESSION['pseudo']) . ' !</li>';
         ?>
       <li>
         <a href="index.php">Accueil <i class="fas fa-home"></i></a>
