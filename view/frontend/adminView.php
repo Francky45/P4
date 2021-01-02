@@ -34,13 +34,13 @@ while ($data = $posts->fetch())
 ?>
     <div class="news_admin">
         <p> Titre de l'article : <?= htmlspecialchars($data['title']) ?><br /></p>
-        <p><em>le <?= $data['creation_date_fr'] ?></em><br /></p>
+        <p><em>le <?= htmlspecialchars($data['creation_date_fr']) ?></em><br /></p>
         <p> <a class="linkbutton" href="index.php?action=editPostPanel&id=<?= htmlspecialchars($data['id']) ?>">Modifier l'article</a></p>
         <p> <a class="linkbutton" href="index.php?action=deletePost&id=<?= htmlspecialchars($data['id']) ?>">Supprimer l'article</a></p>
     </div>
 
     <?php
-}
+};
 $posts->closeCursor();
 ?>
 </div>
@@ -57,7 +57,7 @@ echo '<br>Contenu du commentaire signalé : ' . htmlspecialchars($comments['comm
             <p><a class="linkbutton" href="index.php?action=deleteComment&id=<?= htmlspecialchars($comments['id'])?>">Supprimer</a><br />
             </p>
 
-            <?php } //Fin du while ...
+            <?php }; //Fin du while ...
 $signals->closeCursor();
 ?>
 

@@ -131,7 +131,7 @@ function viewComment()
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
     $comment = $commentManager->getComment($_GET['id']);
   
-    require('view/frontend/editView.php');
+    require('view/frontend/editCommentView.php');
 }
 
 function editComment($id, $comment)

@@ -24,7 +24,7 @@ while ($data = $posts->fetch())
 </div>
 
 <?php
-}
+};
 $posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>

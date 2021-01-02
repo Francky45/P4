@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<?php $title = $post['title']; ?>
+<?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
 
 <div class="news">
     <h3>
-        <?= $post['title'] ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
+        <?= htmlspecialchars($post['title']) ?>
+        <em>le <?= htmlspecialchars($post['creation_date_fr']) ?></em>
     </h3>
 
     <div class="post_list">
@@ -53,7 +53,8 @@ echo' <p><a class="linkbutton"
 href="index.php?action=signalComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' .htmlspecialchars($_GET['id']) . '">Signaler</a></p>';} ?>
             </div>
             <?php
-} //Fin du while ...
+};//Fin du while ...
+$comments->closeCursor();
 ?>
     </div>
 
