@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <meta name="description" content="Billet Simple pour l'Alaska !" />
-  <meta property="og:title" content="Billet Simple pour l'Alaska !" />
+  <meta name="description" content="Billet Simple pour l'Alaska" />
+  <meta property="og:title" content="Billet Simple pour l'Alaska" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="Billet Simple pour l'Alaska ! Un blog par Jean Forteroche" />
+  <meta property="og:url" content="Billet simple pour l'Alaska. Un roman de Jean Forteroche" />
   <meta property="og:image" content="public/pictures/alaska.jpg" />
-  <meta property="og:description" content="Billet Simple pour l'Alaska ! Un blog par Jean Forteroche" />
+  <meta property="og:description" content="Billet simple pour l'Alaska. Un roman de Jean Forteroche" />
   <link rel="icon" type="image/png" href="public/pictures/icon.png" />
   <title><?= $title ?></title>
   <link href="public/css/style.css" rel="stylesheet" />
@@ -65,7 +65,7 @@
         }
     ?>
     </ul>
-    <div id="title">Billet simple pour l'Alaska</div>
+    <div id="title">Billet simple pour l'Alaska. Un roman de Jean Forteroche</div>
 
   </header>
   <?= $content ?>
