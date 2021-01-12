@@ -43,21 +43,21 @@ while ($comment = $comments->fetch())
                 <p><?= htmlspecialchars($comment['comment']) ?></p>
 
                 <?php   if (isset($_SESSION['admin'])) {
-echo' <p><a class="linkbutton"
-href="index.php?action=viewComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Modifier</a></p>';
-echo' <p><a class="linkbutton"
-href="index.php?action=deleteComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Supprimer</a></p>';} ?>
+                    echo' <p><a class="linkbutton"
+                    href="index.php?action=viewComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Modifier</a></p>';
+                    echo' <p><a class="linkbutton"
+                    href="index.php?action=deleteComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' . htmlspecialchars($_GET['id']) . '">Supprimer</a></p>';} ?>
 
                 <?php   if (isset($_SESSION['user'])) {
-echo' <p><a class="linkbutton"
-href="index.php?action=signalComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' .htmlspecialchars($_GET['id']) . '">Signaler</a></p>';} ?>
+                    echo' <p><a class="linkbutton"
+                    href="index.php?action=signalComment&id=' .  htmlspecialchars($comment['id']) . '&idpost=' .htmlspecialchars($_GET['id']) . '">Signaler</a></p>';} ?>
             </div>
-            <?php
+
+<?php
 };//Fin du while ...
 $comments->closeCursor();
 ?>
     </div>
 
-    <?php $content = ob_get_clean(); ?>
-
-    <?php require('template.php'); ?>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php'); ?>

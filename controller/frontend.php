@@ -23,7 +23,7 @@ function logOut()
 function editPostPanel()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts(); 
     $post = $postManager->getPost($_GET['id']);
 
 
@@ -35,7 +35,7 @@ function adminPanel()
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
     $signals = $commentManager->getCommentsSignals();
     $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts();
 
 
     require('view/frontend/adminView.php');
@@ -68,8 +68,8 @@ function signalComment()
 
 function listPosts()
 {
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $postManager = new \OpenClassrooms\Blog\Model\PostManager(); 
+    $posts = $postManager->getPosts();
 
     require('view/frontend/listPostsView.php');
 }
@@ -169,7 +169,7 @@ function newUser()
 
 function logUser()
 {
-    $userManager = new \OpenClassrooms\Blog\Model\UserManager(); // Création d'un objet
+    $userManager = new \OpenClassrooms\Blog\Model\UserManager(); 
     $resultat = $userManager->sessionStart();
 
 
